@@ -3,7 +3,7 @@
 """
 Created on Mon Mar 20 00:10:29 2017
 
-@author: Dinesh
+@author: saimannava
 """
 ########## News API ########################################################
 from newsapi import NewsAPI
@@ -72,7 +72,7 @@ months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 for year in years:
     for month in months:
         mydict = api.query(year, month)
-        file_str = '/Users/Dinesh/Documents/Project Stock predictions/data/nytimes/' + str(year) + '-' + '{:02}'.format(month) + '.json'
+        file_str = '/Users/saimannava/Documents/Project Stock predictions/data/nytimes/' + str(year) + '-' + '{:02}'.format(month) + '.json'
         with open(file_str, 'w') as fout:
             json.dump(mydict, fout)
         fout.close()
