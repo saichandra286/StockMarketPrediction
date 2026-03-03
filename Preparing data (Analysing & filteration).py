@@ -3,7 +3,7 @@
 """
 Created on Tue Apr  4 14:30:12 2017
 
-@author: Dinesh
+@author: saimannava
 """
 
 import numpy as np
@@ -13,7 +13,7 @@ import pandas as pd
 ################################################################################################
 ## Preparing DJIA data
 # Reading DJIA index prices csv file
-with open('/Users/Dinesh/Documents/Project Stock predictions/data/djia_data.csv', 'rb') as csvfile:
+with open('/Users/saimannava/Documents/Project Stock predictions/data/djia_data.csv', 'rb') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=',')
     # Converting the csv file reader to a lists 
     data_list = list(spamreader)
@@ -89,7 +89,7 @@ count_unicode_error = 0
 count_attribute_error = 0   
 for year in years:
     for month in months:
-        file_str = '/Users/Dinesh/Documents/Project Stock predictions/data/nytimes/' + str(year) + '-' + '{:02}'.format(month) + '.json'
+        file_str = '/Users/saimannava/Documents/Project Stock predictions/data/nytimes/' + str(year) + '-' + '{:02}'.format(month) + '.json'
         with open(file_str) as data_file:    
             NYTimes_data = json.load(data_file)
         count_total_articles = count_total_articles + len(NYTimes_data["response"]["docs"][:])
@@ -175,7 +175,7 @@ for date, row in interpolated_df.T.iteritems():
         #print date
         month = date.month
         year = date.year
-        file_str = '/Users/Dinesh/Documents/Project Stock predictions/data/nytimes/' + str(year) + '-' + '{:02}'.format(month) + '.json'
+        file_str = '/Users/saimannava/Documents/Project Stock predictions/data/nytimes/' + str(year) + '-' + '{:02}'.format(month) + '.json'
         with open(file_str) as data_file:    
             NYTimes_data = json.load(data_file)
         count_total_articles = count_total_articles + len(NYTimes_data["response"]["docs"][:])
@@ -211,21 +211,21 @@ for date, row in interpolated_df.T.iteritems():
 
 ## Filtering the whole data for a year
 #filtered_data = interpolated_df.ix['2016-01-01':'2016-12-31']
-#filtered_data.to_pickle('/Users/Dinesh/Documents/Project Stock predictions/data/pickled_ten_year_all.pkl')  
+#filtered_data.to_pickle('/Users/saimannava/Documents/Project Stock predictions/data/pickled_ten_year_all.pkl')  
 
 
 # Saving the data as pickle file
-interpolated_df.to_pickle('/Users/Dinesh/Documents/Project Stock predictions/data/pickled_ten_year_filtered_lead_para.pkl')  
+interpolated_df.to_pickle('/Users/saimannava/Documents/Project Stock predictions/data/pickled_ten_year_filtered_lead_para.pkl')  
 
 
 # Save pandas frame in csv form
-interpolated_df.to_csv('/Users/Dinesh/Documents/Project Stock predictions/data/sample_interpolated_df_10_years_filtered_lead_para.csv',
+interpolated_df.to_csv('/Users/saimannava/Documents/Project Stock predictions/data/sample_interpolated_df_10_years_filtered_lead_para.csv',
                        sep='\t', encoding='utf-8')
 
 
 
 # Reading the data as pickle file
-dataframe_read = pd.read_pickle('/Users/Dinesh/Documents/Project Stock predictions/data/pickled_ten_year_filtered_lead_para.pkl')
+dataframe_read = pd.read_pickle('/Users/saimannava/Documents/Project Stock predictions/data/pickled_ten_year_filtered_lead_para.pkl')
 
 
 
